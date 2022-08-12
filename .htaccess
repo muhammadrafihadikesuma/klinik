@@ -1,0 +1,4 @@
+RewriteEngine On
+
+
+ErrorDocument 404 http://localhost/klinikpws/pages/404.php
