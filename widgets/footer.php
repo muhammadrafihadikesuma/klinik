@@ -12,6 +12,9 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- DATE -->
+
+
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -43,8 +46,11 @@
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 
+  <!-- Reports Pendaftaran -->
   <script>
       var minDate, maxDate;
+
+      // Custom filtering function which will search data in column four between two values
       $.fn.dataTable.ext.search.push(
           function(settings, data, dataIndex) {
               var min = minDate.val();
@@ -64,16 +70,18 @@
       );
 
       $(document).ready(function() {
+          // Create date inputs
+          minDate = new DateTime($('#min'), {
+              format: 'YYYY-MM-DD'
+          });
+          maxDate = new DateTime($('#max'), {
+              format: 'YYYY-MM-DD'
+          });
+
+          // DataTables initialisation
           var table = $('#rPendaftaran').DataTable({
-              // lengthChange: false,
               dom: 'Bfrtip',
               buttons: [
-                  // {
-                  //       text: 'Tambah Pasien',
-                  //       action: function(e, dt, button, config) {
-                  //           window.location = '../forms/add_pasien.php';
-                  //       }
-                  //   },
                   'copy',
                   {
                       extend: 'excelHtml5',
@@ -94,23 +102,87 @@
               ],
 
               dom: "<'row'<'col-md-3'l><'col-md-5'B><'col-md-4'f>>" +
+
                   "<'row'<'col-md-12'tr>>" +
                   "<'row'<'col-md-5'i><'col-md-7'p>>",
               lengthMenu: [
                   [10, 25, 50, 100, -1],
                   [10, 25, 50, 100, "All"]
-              ]
+              ],
           });
 
-          table.buttons().container()
-              .appendTo('#dataTable_wrapper .col-md-5:eq(0)');
+          // Refilter the table
+          $('#min, #max').on('change', function() {
+              table.draw();
+          });
+      });
+  </script>
+  <!-- Reports Pasien -->
+  <script>
+      var minDate, maxDate;
 
+      // Custom filtering function which will search data in column four between two values
+      $.fn.dataTable.ext.search.push(
+          function(settings, data, dataIndex) {
+              var min = minDate.val();
+              var max = maxDate.val();
+              var date = new Date(data[4]);
+
+              if (
+                  (min === null && max === null) ||
+                  (min === null && date <= max) ||
+                  (min <= date && max === null) ||
+                  (min <= date && date <= max)
+              ) {
+                  return true;
+              }
+              return false;
+          }
+      );
+
+      $(document).ready(function() {
+          // Create date inputs
           minDate = new DateTime($('#min'), {
               format: 'MMMM Do YYYY'
           });
           maxDate = new DateTime($('#max'), {
               format: 'MMMM Do YYYY'
           });
+
+          // DataTables initialisation
+          var table = $('#rPasien').DataTable({
+              dom: 'Bfrtip',
+              buttons: [
+                  'copy',
+                  {
+                      extend: 'excelHtml5',
+                      exportOptions: {
+                          columns: ':visible'
+                      }
+                  },
+                  'print',
+                  {
+                      extend: 'pdfHtml5',
+                      orientation: 'landscape',
+                      pageSize: 'LEGAL',
+                      download: 'open',
+
+                  },
+                  'colvis'
+
+              ],
+
+              dom: "<'row'<'col-md-3'l><'col-md-5'B><'col-md-4'f>>" +
+
+                  "<'row'<'col-md-12'tr>>" +
+                  "<'row'<'col-md-5'i><'col-md-7'p>>",
+              lengthMenu: [
+                  [10, 25, 50, 100, -1],
+                  [10, 25, 50, 100, "All"]
+              ],
+          });
+
+          // Refilter the table
           $('#min, #max').on('change', function() {
               table.draw();
           });
@@ -130,7 +202,7 @@
                   //           window.location = '../forms/add_pasien.php';
                   //       }
                   //   },
-                  <?php if ($_SESSION['level'] == 'admin' || $_SESSION['level'] == 'manager' || $_SESSION['level'] == 'dokter' ) { ?>,
+                  <?php if ($_SESSION['level'] == 'admin' || $_SESSION['level'] == 'manager' || $_SESSION['level'] == 'dokter') { ?>,
                       'copy',
                       {
                           extend: 'excelHtml5',
@@ -150,7 +222,10 @@
                   <?php } ?>
 
               ],
-
+              "columnDefs": [{
+                  "width": "100px",
+                  "targets": "_all"
+              }],
               dom: "<'row'<'col-md-3'l><'col-md-5'B><'col-md-4'f>>" +
 
                   "<'row'<'col-md-12'tr>>" +
@@ -180,7 +255,7 @@
                   //           window.location = '../forms/add_pasien.php';
                   //       }
                   //   },
-                  <?php if ($_SESSION['level'] == 'admin' || $_SESSION['level'] == 'manager' || $_SESSION['level'] == 'dokter' ) { ?>,
+                  <?php if ($_SESSION['level'] == 'admin' || $_SESSION['level'] == 'manager' || $_SESSION['level'] == 'dokter') { ?>,
 
                       'copy',
                       {

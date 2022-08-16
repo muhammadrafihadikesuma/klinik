@@ -104,9 +104,7 @@ require '../api/koneksi.php';
 													<a href="../api/add_apotekers.php?id=<?= $read['id_diagnosa'] ?>"  class="label label-sm label-info">
 														<button class="btn btn-primary btn-sm">Selesai</button></a>
 
-													<a href="../export/surat_sakit.php?id=<?= $read['id_diagnosa'] ?>" class="label label-sm label-info">
-														<button class="btn btn-success btn-sm">Surat Sakit</button></a>
-
+												
 														<a href="../api/batal_apotekers.php?id=<?= $read['id_diagnosa'] ?>" class="label label-sm label-info">
 														<button class="btn btn-danger btn-sm">Batal</button></a>
 												</td>

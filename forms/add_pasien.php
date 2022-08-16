@@ -1105,6 +1105,7 @@ function tgl_indo($tanggal)
 											<option selected disabled value>Pilih Status Pasien</option>
 											<option value="Pekerja">Pekerja</option>
 											<option value="Suami/Istri">Istri/Suami Pekerja</option>
+											<option value="Keluarga Tambahan">Keluarga Tambahan</option>
 											<option value="Anak Pekerja">Anak Pekerja</option>
 										</select>
 										<label for="floatingStatus">Status Pasien</label>
@@ -1471,7 +1472,7 @@ function tgl_indo($tanggal)
 									<div class="col-12">
 										<div class="form-floating mb-3">
 											<select class="form-select" aria-label="Default select example" id="floatingEstate" name="estate" required>
-												<option selected value="Pks">PKS</option>
+												<option selected value="PKS">PKS</option>
 											</select>
 											<label for="floatingEstate">Estate Pekerja</label>
 										</div>

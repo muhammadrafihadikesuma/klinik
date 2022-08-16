@@ -74,6 +74,7 @@
 											<option value="admin">Admin</option>
 											<option value="manager">Manager</option>
 											<option value="dokter">Dokter</option>
+											<option value="bidan">Bidan</option>
 											<option value="perawat">Perawat</option>
 											<option value="staff">Staff</option>
 											<option value="user">User</option>

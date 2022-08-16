@@ -105,7 +105,7 @@ while ($read = mysqli_fetch_array($query)) {
 								<!-- Tensi Darah -->
 								<div class="col-12"></div>
 								<div class="form-floating mb-3">
-									<input type="number" class="form-control" id="floatingTensi" name="tensi_darah" value="<?php echo $tensi_darah ?>" placeholder="Masukkan Tensi Darah" required>
+									<input type="text" class="form-control" id="floatingTensi" name="tensi_darah" value="<?php echo $tensi_darah ?>" placeholder="Masukkan Tensi Darah" required>
 									<label for="floatingPasien">Tensi Darah</label>
 								</div>
 

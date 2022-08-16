@@ -13,7 +13,7 @@ require '../api/koneksi.php';
 <!-- End Sidebar-->
 
 <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-<!-- <link rel="stylesheet"  href="https://cdn.datatables.net/v/dt/dt-1.11.4/date-1.1.1/datatables.min.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="../assets/css/datatables.min.css" /> -->
 
 <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/date-1.1.1/datatables.min.js"></script> -->
 
@@ -21,7 +21,32 @@ require '../api/koneksi.php';
 <!-- <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script> -->
 <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.4/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/b-print-2.2.2/datatables.min.css" /> -->
 
+<?php
+function tanggal_indo($tanggal)
+{
+    $bulan = array(
+        1 =>   'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+    );
+    $pecahkan = explode('-', $tanggal);
 
+    // variabel pecahkan 0 = tanggal
+    // variabel pecahkan 1 = bulan
+    // variabel pecahkan 2 = tahun
+
+    return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
+}
+?>
 <body>
     <main id="main" class="main">
 
@@ -57,14 +82,15 @@ require '../api/koneksi.php';
 
                             <br>
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="example" width="100%" cellspacing="1">
+                                <table class="table table-striped table-bordered" id="rPendaftaran" width="100%" cellspacing="1">
                                     <thead>
                                         <tr>
                                             <th>#</th>
                                             <th>NO. PENDAFTARAN</th>
                                             <th>NO. PASIEN</th>
                                             <th>NAMA</th>
-                                            <th>TANGGAL</th>
+                                            <th>TANGGAL BEROBAT</th>
+                                            <th>JAM BEROBAT</th>
                                             <th>INFORMASI</th>
                                             <th>KELUHAN</th>
                                             <th>STATUS</th>
@@ -82,6 +108,7 @@ require '../api/koneksi.php';
                                             $id_pendaftaran = $read['id_pendaftaran'];
                                             $id_pasien = $read['id_pasien'];
                                             $tanggal_pendaftaran = $read['tanggal_pendaftaran'];
+                                            $jam_b = $read['jam_b'];
                                             $tinggi_badan = $read['tinggi_badan'];
                                             $berat_badan = $read['berat_badan'];
                                             $lingkar_perut = $read['lingkar_perut'];
@@ -107,7 +134,8 @@ require '../api/koneksi.php';
                                                     }
                                                     ?>
                                                 </td>
-                                                <td style="width:5%; text-align:left;"><?php echo  $tanggal_pendaftaran;  ?></td>
+                                                <td style="width:5%; text-align:left;"><?php echo $tanggal_pendaftaran;  ?></td>
+                                                <td style="width:5%; text-align:left;"><?php echo $jam_b;  ?></td>
                                                 <td style="width:20%; text-align:left;"><?php echo "Tinggi : ";
                                                                                         echo $tinggi_badan, " Cm";
                                                                                         echo " <br> Berat Badan : ";
@@ -145,43 +173,3 @@ require '../api/koneksi.php';
     <!-- End #main -->
 
     <?php require '../widgets/footer.php'; ?>
-<script>
-    var minDate, maxDate;
- 
- // Custom filtering function which will search data in column four between two values
- $.fn.dataTable.ext.search.push(
-     function( settings, data, dataIndex ) {
-         var min = minDate.val();
-         var max = maxDate.val();
-         var date = new Date( data[4] );
-  
-         if (
-             ( min === null && max === null ) ||
-             ( min === null && date <= max ) ||
-             ( min <= date   && max === null ) ||
-             ( min <= date   && date <= max )
-         ) {
-             return true;
-         }
-         return false;
-     }
- );
-  
- $(document).ready(function() {
-     // Create date inputs
-     minDate = new DateTime($('#min'), {
-         format: 'MMMM Do YYYY'
-     });
-     maxDate = new DateTime($('#max'), {
-         format: 'MMMM Do YYYY'
-     });
-  
-     // DataTables initialisation
-     var table = $('#example').DataTable();
-  
-     // Refilter the table
-     $('#min, #max').on('change', function () {
-         table.draw();
-     });
- });
-</script>

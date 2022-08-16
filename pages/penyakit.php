@@ -89,9 +89,9 @@ require '../api/koneksi.php';
                 $query = mysqli_query($koneksi, "SELECT max(id_penyakit) as kodeTerbesar FROM tbl_penyakit");
                 $data = mysqli_fetch_array($query);
                 $idPenyakit = $data['kodeTerbesar'];
-                $urutans = (int) substr($idPenyakit, 10, 5);
+                $urutans = (int) substr($idPenyakit, 6, 5);
                 $urutans++;
-                $hurufs = "PWSPOLIPKT";
+                $hurufs = "PWSPKT";
                 $idPenyakit = $hurufs . sprintf("%05s", $urutans);
                 ?>
 

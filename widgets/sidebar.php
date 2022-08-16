@@ -206,7 +206,7 @@
 
     <!-- REKAM MEDIS -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="/klinikpws/pages/rekam_medis.php">
+      <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/pages/rekam_medis.php') { ?> class="nav-link" <?php } else { ?> class="nav-link collapsed" <?php } ?> href='/klinikpws/pages/rekam_medis.php'>
         <i class="fa-solid fa-file-waveform" style="width: 18px;"></i>
         <span>Rekam Medis</span>
       </a>

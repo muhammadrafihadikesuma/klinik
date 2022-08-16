@@ -16,9 +16,9 @@ require '../api/koneksi.php';
 $query = mysqli_query($koneksi, "SELECT max(id_penyakit) as kodeTerbesar FROM tbl_penyakit");
 $data = mysqli_fetch_array($query);
 $idPenyakit = $data['kodeTerbesar'];
-$urutan = (int) substr($idPenyakit, 10, 5);
+$urutan = (int) substr($idPenyakit, 6, 5);
 $urutan++;
-$huruf = "PWSPOLIPKT";
+$huruf = "PWSPKT";
 $idPenyakit = $huruf . sprintf("%05s", $urutan);
 ?>
 

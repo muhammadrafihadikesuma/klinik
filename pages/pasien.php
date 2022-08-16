@@ -94,7 +94,7 @@ function tanggal_indo($tanggal)
                                     <tbody>
                                         <?php
                                         require "../api/koneksi.php";
-                                        $sql = mysqli_query($koneksi, "SELECT * from tbl_pasien WHERE NOT estate='Umum' order by id Desc") or die("error karena" . mysqli_error($connection));
+                                        $sql = mysqli_query($koneksi, "SELECT * from tbl_pasien WHERE NOT status_pasien='Umum' order by id Desc") or die("error karena" . mysqli_error($connection));
                                         $no = 1;
                                         while ($read = mysqli_fetch_array($sql)) {
                                             $id_pasien = $read['id_pasien'];

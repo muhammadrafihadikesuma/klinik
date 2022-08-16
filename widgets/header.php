@@ -5,14 +5,13 @@ require '../api/check.php';
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  
+
   <!-- <meta http-equiv="refresh" content="30" /> -->
   <title>KLINIK PRIMA WARAS SENTOSA</title>
   <meta content="" name="description">
@@ -33,38 +32,27 @@ require '../api/check.php';
   <link rel="stylesheet" href="../assets/css/select2-bootstrap-5-theme.rtl.min.css" />
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon-new.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon-new.png" rel="apple-touch-icon">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="../assets/css/css.css" rel="stylesheet">
 
-  <!-- DATE -->
- <link href="../assets/css/style.css">
-  <link href="../assets/css/jquery.dataTables.min.css">
-  <link href="../assets/css/dataTables.dateTime.min.css">
-  <link href="../assets/css/bootstrap-datetimepicker.min.css"> -->
-  <!-- <link href="../assets/css/datatables.min.css" rel="stylesheet" > -->
-
-
-
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Custom CSS Table-->
-  <link rel="stylesheet" href="../assets/css/dataTables.bootstrap5.min.css">
-  <link rel="stylesheet" href="../assets/css/buttons.bootstrap5.min.css">
-
-  <!-- Template Main CSS File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
-  <link href="../assets/css/sb-admin-2.min.css">
+<!-- VENDOR CSS FILE -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <!-- DATATABLES -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/dataTables.dateTime.min.css">
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -74,7 +62,7 @@ require '../api/check.php';
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="../pages/home.php" class="logo d-flex align-items-center">
-        <img src="../assets/img/logo-new.png" alt="">
+        <img src="../assets/img/logo-klinik.png" alt="">
         <span class="d-none d-lg-block">KLINIK PWS</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>

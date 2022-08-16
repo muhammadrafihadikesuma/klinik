@@ -16,12 +16,13 @@ require '../api/koneksi.php';
 $query = mysqli_query($koneksi, "SELECT max(id_diagnosa) as kodeTerbesar FROM tbl_diagnosa");
 $data = mysqli_fetch_array($query);
 $id_diagnosa = $data['kodeTerbesar'];
-$urutan = (int) substr($id_diagnosa, 10, 5);
+$urutan = (int) substr($id_diagnosa, 6, 5);
 $urutan++;
-$huruf = "PWSPOLIDNS";
+$huruf = "PWSDNA";
 $id_diagnosa = $huruf . sprintf("%05s", $urutan);
 
-
+?>
+<?php
 $id = $_GET['id'];
 $query = mysqli_query($koneksi, "SELECT * FROM tbl_pendaftaran WHERE id_pendaftaran = '$id'");
 while ($read = mysqli_fetch_array($query)) {
@@ -186,7 +187,7 @@ $penyakit = mysqli_query($koneksi, " SELECT * FROM tbl_penyakit ORDER BY nama_pe
                                 <!-- RESEP -->
                                 <div class="col-12"></div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="4" onkeyup="my4()" name="resep" placeholder="Masukkan " required>
+                                    <textarea class="form-control" id="4" name="resep" onkeyup="my4()" data-enable-grammarly="false" placeholder="Catatan" style="height: 150px;" required></textarea>
                                     <label for="4">Resep</label>
                                 </div>
 
