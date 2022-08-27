@@ -10,7 +10,6 @@ require '../api/koneksi.php';
 <!-- ======= Sidebar ======= -->
 <?php require '../widgets/sidebar.php'; ?>
 <!-- End Sidebar-->
-<link rel="stylesheet" type="text/css" href="../assets/css/datatables.min.css" />
 
 <?php
 function tanggal_indo($tanggal)
@@ -76,7 +75,7 @@ function tanggal_indo($tanggal)
                             <br>
                             <div class="table-responsive">
 
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
+                                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="1">
                                     <thead>
                                         <tr>
                                             <th>#</th>

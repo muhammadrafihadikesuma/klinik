@@ -103,7 +103,7 @@ function tgl_indo($tanggal)
 							</table>
 							<br>
 							<div class="table-responsive">
-								<table class="table table-bordered" id="dataTablepasien" width="100%" cellspacing="1">
+								<table class="table table-striped table-bordered" id="dataTablepasien" width="100%" cellspacing="1">
 									<thead>
 										<tr>
 											<th>#</th>
@@ -121,7 +121,6 @@ function tgl_indo($tanggal)
 											<th>ESTATE</th>
 											<th>OP</th>
 											<th>AUTHOR</th>
-											<th>Opsi</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -168,15 +167,7 @@ function tgl_indo($tanggal)
 												<td><?php echo $estate;  ?></td>
 												<td> <?php echo $op; ?></td>
 												<td> <?php echo $author; ?></td>
-												<td style="text-align: center; width: 30%;">
 												
-													<a href="../forms/edit_pasien.php?id=<?= $read['id_pasien'] ?>" class="label label-sm label-info">
-														<i class="bi bi-pencil-square btn btn-success btn-sm"></i></a>
-													<a href="../api/delete_pasiens.php?id=<?= $read['id_pasien'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapusnya ?')">
-														<i class="bi bi-trash btn btn-danger btn-sm"></i></a>
-
-												</td>
-
 											</tr>
 										<?php } ?>
 									</tbody>
@@ -356,6 +347,7 @@ function tgl_indo($tanggal)
 												<option value="Pemuat">Pemuat</option>
 												<option value="Pengawas">Pengawas</option>
 												<option value="Pengirim Produksi">Pengirim Produksi</option>
+												<option value="Perawatan">Perawatan</option>
 												<option value="Perawat">Perawat Poliklinik</option>
 												<option value="Petugas">Petugas</option>
 												<option value="Plt">Pelaksana Tugas</option>
@@ -622,6 +614,7 @@ function tgl_indo($tanggal)
 												<option value="Pemuat">Pemuat</option>
 												<option value="Pengawas">Pengawas</option>
 												<option value="Pengirim Produksi">Pengirim Produksi</option>
+												<option value="Perawatan">Perawatan</option>
 												<option value="Perawat">Perawat Poliklinik</option>
 												<option value="Petugas">Petugas</option>
 												<option value="Plt">Pelaksana Tugas</option>
@@ -894,6 +887,7 @@ function tgl_indo($tanggal)
 												<option value="Pemuat">Pemuat</option>
 												<option value="Pengawas">Pengawas</option>
 												<option value="Pengirim Produksi">Pengirim Produksi</option>
+												<option value="Perawatan">Perawatan</option>
 												<option value="Perawat">Perawat Poliklinik</option>
 												<option value="Petugas">Petugas</option>
 												<option value="Plt">Pelaksana Tugas</option>
@@ -1166,6 +1160,7 @@ function tgl_indo($tanggal)
 												<option value="Pemuat">Pemuat</option>
 												<option value="Pengawas">Pengawas</option>
 												<option value="Pengirim Produksi">Pengirim Produksi</option>
+												<option value="Perawatan">Perawatan</option>
 												<option value="Perawat">Perawat Poliklinik</option>
 												<option value="Petugas">Petugas</option>
 												<option value="Plt">Pelaksana Tugas</option>
@@ -1436,6 +1431,7 @@ function tgl_indo($tanggal)
 												<option value="Pemuat">Pemuat</option>
 												<option value="Pengawas">Pengawas</option>
 												<option value="Pengirim Produksi">Pengirim Produksi</option>
+												<option value="Perawatan">Perawatan</option>
 												<option value="Perawat">Perawat Poliklinik</option>
 												<option value="Petugas">Petugas</option>
 												<option value="Plt">Pelaksana Tugas</option>

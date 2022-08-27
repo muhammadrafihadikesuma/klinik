@@ -64,7 +64,7 @@ function tgl_indonesia($tanggal)
                                 </button>
                             </h6> -->
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
+                                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="1">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -123,10 +123,9 @@ function tgl_indonesia($tanggal)
                                                     ?>
                                                 </td>
                                                 <td style="text-align: center; width: 7%;">
-                                                    <a href="../forms/edit_pendaftaran.php?id=<?= $read['id_pendaftaran'] ?>" class="label label-sm label-info">
-                                                        <i class="bi bi-pencil-square btn btn-success btn-sm"></i></a>
-                                                    <a href="../api/delete_pendaftaran.php?id=<?= $read['id_pendaftaran'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapusnya ?')">
-                                                        <i class="bi bi-trash btn btn-danger btn-sm"></i></a>
+                                                    <a href="../api/whatsapp.php?id=<?= $read['id_pasien'] ?>">
+                                                        <i class="bx bxl-whatsapp btn btn-success btn-sm"></i></a>
+                                               
                                                 </td>
                                             </tr>
                                         <?php } ?>

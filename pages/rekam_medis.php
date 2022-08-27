@@ -41,6 +41,7 @@ require '../api/koneksi.php';
                                             <th>TANGGAL</th>
                                             <th>INFORMASI</th>
                                             <th>KELUHAN</th>
+                                            <th>TERAPI</th>
                                             <th>STATUS</th>
                                             <th>AUTHOR</th>
                                             <th>Opsi</th>
@@ -96,6 +97,15 @@ require '../api/koneksi.php';
                                                                                         echo " <br> Pernafasan : ";
                                                                                         echo $pernafasan, " kali per menit"; ?></td>
                                                 <td><?php echo  $keluhan_pasien;  ?></td>
+                                                <td style="width:15%; text-align:left;">
+                                                    <?php
+                                                    require '../api/koneksi.php';
+                                                    $pasiens = mysqli_query($koneksi, "SELECT * from tbl_diagnosa where id_pasien='$id_pasien'") or die("error karena " . mysqli_error($koneksi));
+                                                    while ($readss = mysqli_fetch_array($pasiens)) {
+                                                        echo $resep = $readss['terapi'];
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td style="width: 8%;"><?php echo  $status;  ?></td>
                                                 <td style="width: 20%;"><?php echo  $author;  ?></td>
                                                 <td style="text-align: center; width: 7%;">

@@ -11,16 +11,43 @@ require '../api/koneksi.php';
 <?php require '../widgets/sidebar.php'; ?>
 <!-- End Sidebar-->
 
+<?php
+function tanggal_indo($tanggal)
+{
+    $bulan = array(
+        1 =>   'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+    );
+    $pecahkan = explode('-', $tanggal);
+
+    // variabel pecahkan 0 = tanggal
+    // variabel pecahkan 1 = bulan
+    // variabel pecahkan 2 = tahun
+
+    return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
+}
+?>
+
 <body>
 
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>DATA PASIEN UMUM</h1>
+            <h1>DATA PASIEN REGIONAL OFFICE</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../pages/home.php">Home</a></li>
-                    <li class="breadcrumb-item active">Data Pasien Umum</li>
+                    <li class="breadcrumb-item active">Data Pasien Regional Office</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -30,7 +57,7 @@ require '../api/koneksi.php';
             <div class="card shadow mb-4">
                 <div class="col-lg-12">
                     <div class="card-body">
-                        <h5 class="card-title">Data Pasien Umum</h5>
+                        <h5 class="card-title">Regional Office</h5>
                         <div class="card-body">
                             <table cellspacing="5" cellpadding="5">
                                 <tr>
@@ -94,6 +121,7 @@ require '../api/koneksi.php';
                             </table>
                             <br>
                             <div class="table-responsive">
+
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
                                     <thead>
                                         <tr>
@@ -104,6 +132,7 @@ require '../api/koneksi.php';
                                             <th>JENIS KELAMIN</th>
                                             <th>NO BPJS</th>
                                             <th>TANGGAL LAHIR</th>
+                                            <th>UMUR</th>
                                             <th>STATUS</th>
                                             <th>NAMA PEKERJA</th>
                                             <th>JABATAN PEKERJA</th>
@@ -118,7 +147,7 @@ require '../api/koneksi.php';
                                     <tbody>
                                         <?php
                                         require "../api/koneksi.php";
-                                        $sql = mysqli_query($koneksi, "SELECT * from tbl_pasien WHERE estate='Umum' order by id_pasien  Desc LIMIT 3000") or die("error karena" . mysqli_error($connection));
+                                        $sql = mysqli_query($koneksi, "SELECT * from tbl_pasien WHERE estate='Regional Office' order by id Desc") or die("error karena" . mysqli_error($connection));
                                         $no = 1;
                                         while ($read = mysqli_fetch_array($sql)) {
                                             $id_pasien = $read['id_pasien'];
@@ -126,7 +155,16 @@ require '../api/koneksi.php';
                                             $nama_pasien = $read['nama_pasien'];
                                             $jk = $read['jk'];
                                             $no_bpjs = $read['no_bpjs'];
+
                                             $tgl_lahir = $read['tgl_lahir'];
+                                            $tanggal_lahir = $read['tgl_lahir'];
+                                            $umur = $read['umur'];
+
+                                            // $umur = strtotime($tgl_lahir);
+                                            // $today =strtotime(date("Y-m-d"));
+                                            // $usia = $today-$umur;
+                                            // $usia=floor($usia/(60*60*24*365));
+
                                             $status_pasien = $read['status_pasien'];
                                             $nama_pekerja = $read['nama_pekerja'];
                                             $jabatan_pekerja = $read['jabatan_pekerja'];
@@ -150,7 +188,8 @@ require '../api/koneksi.php';
                                                     ?>
                                                 </td>
                                                 <td><?php echo $no_bpjs; ?></td>
-                                                <td><?php echo $tgl_lahir;  ?></td>
+                                                <td><?php echo tanggal_indo($tgl_lahir);  ?></td>
+                                                <td><?php echo $umur; ?> Tahun</td>
                                                 <td><?php echo $status_pasien;  ?></td>
                                                 <td><?php echo $nama_pekerja; ?></td>
                                                 <td><?php echo $jabatan_pekerja;  ?></td>
@@ -160,9 +199,9 @@ require '../api/koneksi.php';
                                                 <td> <?php echo $op; ?></td>
                                                 <td> <?php echo $author; ?></td>
                                                 <td style="text-align: center; width: 30%;">
-                                                    <a href="../forms/edit_umum.php?id=<?= $read['id_pasien'] ?>" class="label label-sm label-info">
+                                                    <a href="../forms/edit_ro.php?id=<?= $read['id_pasien'] ?>" class="label label-sm label-info">
                                                         <i class="bi bi-pencil-square btn btn-success btn-sm"></i></a>
-                                                    <a href="../api/delete_umum.php?id=<?= $read['id_pasien'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapusnya ?')">
+                                                    <a href="../api/delete_ro.php?id=<?= $read['id_pasien'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapusnya ?')">
                                                         <i class="bi bi-trash btn btn-danger btn-sm"></i></a>
                                                 </td>
 

@@ -12,15 +12,6 @@ require '../api/koneksi.php';
 
 <!-- End Sidebar-->
 
-<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-<!-- <link rel="stylesheet" type="text/css" href="../assets/css/datatables.min.css" /> -->
-
-<!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/date-1.1.1/datatables.min.js"></script> -->
-
-<!-- <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" /> -->
-<!-- <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script> -->
-<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.4/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/b-print-2.2.2/datatables.min.css" /> -->
-
 <?php
 function tanggal_indo($tanggal)
 {

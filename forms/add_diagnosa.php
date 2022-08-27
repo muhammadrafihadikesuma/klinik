@@ -215,7 +215,7 @@ $penyakit = mysqli_query($koneksi, " SELECT * FROM tbl_penyakit ORDER BY nama_pe
                                 <!-- Catatan -->
                                 <div class="col-12"></div>
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="4" name="catatan" onkeyup="my4()" data-enable-grammarly="false" placeholder="Catatan" style="height: 150px;" required></textarea>
+                                    <textarea class="form-control" id="4" name="catatan" onkeyup="my4()" data-enable-grammarly="false" placeholder="Catatan" style="height: 150px;"></textarea>
                                     <label for="4">Catatan</label>
                                 </div>
 

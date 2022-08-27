@@ -63,7 +63,7 @@ function tgl_indo($tanggal)
                                 </button>
                             </h6>
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
+                                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="1">
                                     <thead>
                                         <tr>
                                             <th>#</th>

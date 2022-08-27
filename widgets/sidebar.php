@@ -65,14 +65,15 @@
           </a>
         </li>
 
-        <!-- Rujukan -->
-        <li>
-          <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/pages/rujukan.php') { ?> class="active" <?php } else { ?> class="nav-link collapsed" <?php } ?> href="/klinikpws/pages/rujukan.php">
-            <i class="bi bi-circle" style="font-size: 10px;"></i>
-            <span>Rujukan</span>
-          </a>
-        </li>
-
+        <?php if ($_SESSION['level'] == 'admin') { ?>
+          <!-- Rujukan -->
+          <li>
+            <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/pages/rujukan.php') { ?> class="active" <?php } else { ?> class="nav-link collapsed" <?php } ?> href="/klinikpws/pages/rujukan.php">
+              <i class="bi bi-circle" style="font-size: 10px;"></i>
+              <span>Rujukan</span>
+            </a>
+          </li>
+        <?php } ?>
       </ul>
     </li>
     <!-- End Forms Nav -->
@@ -185,21 +186,25 @@
             <i class="bi bi-circle" style="font-size: 10px;"></i><span>Reports Diagnosa</span>
           </a>
         </li>
-        <li>
-          <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/reports/r_apoteker.php') { ?> class="active" <?php } else { ?> class="collapsed" <?php } ?> href='/klinikpws/reports/r_apoteker.php'>
-            <i class="bi bi-circle" style="font-size: 10px;"></i><span>Reports Apoteker</span>
-          </a>
-        </li>
-        <li>
-          <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/reports/r_rujukan.php') { ?> class="active" <?php } else { ?> class="collapsed" <?php } ?> href='/klinikpws/reports/r_rujukan.php'>
-            <i class="bi bi-circle" style="font-size: 10px;"></i><span>Reports Rujukan</span>
-          </a>
-        </li>
-        <li>
-          <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/reports/r_surat.php') { ?> class="active" <?php } else { ?> class="collapsed" <?php } ?> href='/klinikpws/reports/r_surat.php'>
-            <i class="bi bi-circle" style="font-size: 10px;"></i><span>Reports Surat Sakit</span>
-          </a>
-        </li>
+        <?php if ($_SESSION['level'] == 'admin') { ?>
+
+          <li>
+            <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/reports/r_apoteker.php') { ?> class="active" <?php } else { ?> class="collapsed" <?php } ?> href='/klinikpws/reports/r_apoteker.php'>
+              <i class="bi bi-circle" style="font-size: 10px;"></i><span>Reports Apoteker</span>
+            </a>
+          </li>
+          <li>
+            <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/reports/r_rujukan.php') { ?> class="active" <?php } else { ?> class="collapsed" <?php } ?> href='/klinikpws/reports/r_rujukan.php'>
+              <i class="bi bi-circle" style="font-size: 10px;"></i><span>Reports Rujukan</span>
+            </a>
+          </li>
+          <li>
+            <a <?php if ($_SERVER['SCRIPT_NAME'] == '/klinikpws/reports/r_surat.php') { ?> class="active" <?php } else { ?> class="collapsed" <?php } ?> href='/klinikpws/reports/r_surat.php'>
+              <i class="bi bi-circle" style="font-size: 10px;"></i><span>Reports Surat Sakit</span>
+            </a>
+          </li>
+        <?php } ?>
+
       </ul>
     </li>
     <!-- End Off Laporan -->

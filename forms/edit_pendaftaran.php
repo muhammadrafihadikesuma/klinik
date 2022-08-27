@@ -84,21 +84,21 @@ while ($read = mysqli_fetch_array($query)) {
 								<!-- Tinggi Badan -->
 								<div class="col-12"></div>
 								<div class="form-floating mb-3">
-									<input type="number" class="form-control" id="floatingTinggi" name="tinggi_badan" value="<?php echo $tinggi_badan ?>" placeholder="Masukkan Tinggi Badan Dalam Format cm" required>
+									<input type="text" class="form-control" id="floatingTinggi" name="tinggi_badan" value="<?php echo $tinggi_badan ?>" placeholder="Masukkan Tinggi Badan Dalam Format cm" required>
 									<label for="floatingPasien">Tinggi Badan</label>
 								</div>
 
 								<!-- Berat Badan -->
 								<div class="col-12"></div>
 								<div class="form-floating mb-3">
-									<input type="number" class="form-control" id="floatingBerat" name="berat_badan" value="<?php echo $berat_badan ?>" placeholder="Masukkan Berat Badan" required>
+									<input type="text" class="form-control" id="floatingBerat" name="berat_badan" value="<?php echo $berat_badan ?>" placeholder="Masukkan Berat Badan" required>
 									<label for="floatingPasien">Berat Badan</label>
 								</div>
 
 								<!-- Lingkat Perut -->
 								<div class="col-12"></div>
 								<div class="form-floating mb-3">
-									<input type="number" class="form-control" id="floatingLingkar" name="lingkar_perut" value="<?php echo $lingkar_perut ?>" placeholder="Masukkan Lingkar Perut" required>
+									<input type="text" class="form-control" id="floatingLingkar" name="lingkar_perut" value="<?php echo $lingkar_perut ?>" placeholder="Masukkan Lingkar Perut" required>
 									<label for="floatingPasien">Lingkar Perut</label>
 								</div>
 
@@ -112,21 +112,21 @@ while ($read = mysqli_fetch_array($query)) {
 								<!-- Suhu -->
 								<div class="col-12"></div>
 								<div class="form-floating mb-3">
-									<input type="number" class="form-control" id="floatingSuhu" name="suhu" value="<?php echo $suhu ?>" placeholder="Masukkan Suhu Tubuh" required>
+									<input type="text" class="form-control" id="floatingSuhu" name="suhu" value="<?php echo $suhu ?>" placeholder="Masukkan Suhu Tubuh" required>
 									<label for="floatingPasien">Suhu Tubuh</label>
 								</div>
 
 								<!-- Nadi -->
 								<div class="col-12"></div>
 								<div class="form-floating mb-3">
-									<input type="number" class="form-control" id="floatingNadi" name="nadi" value="<?php echo $nadi ?>" placeholder="Masukkan Denyut Nadi" required>
+									<input type="text" class="form-control" id="floatingNadi" name="nadi" value="<?php echo $nadi ?>" placeholder="Masukkan Denyut Nadi" required>
 									<label for="floatingPasien">Denyut Nadi</label>
 								</div>
 
 								<!-- Pernafasan -->
 								<div class="col-12"></div>
 								<div class="form-floating mb-3">
-									<input type="number" class="form-control" id="floatingPernafasan" name="pernafasan" value="<?php echo $pernafasan ?>" placeholder="Masukkan Pernafasan" required>
+									<input type="text" class="form-control" id="floatingPernafasan" name="pernafasan" value="<?php echo $pernafasan ?>" placeholder="Masukkan Pernafasan" required>
 									<label for="floatingPasien">Pernafasan</label>
 								</div>
 

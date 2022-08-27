@@ -59,17 +59,70 @@ function tanggal_indo($tanggal)
                     <div class="card-body">
                         <h5 class="card-title">Data Pasien PT. Pinang Witmas Sejati</h5>
                         <div class="card-body">
-                            <h6>
-                                <a href="../pages/pasien_umum.php">
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#inputPendaftaran">
-                                        PASIEN UMUM
-                                    </button>
-                                </a>
-                            </h6>
+                            <table cellspacing="5" cellpadding="5">
+                                <tr>
+                                    <td>
+                                        <a href="../pages/pasien.php">
+                                            <h6><button type="button" class="btn btn-dark">
+                                                    All Pasien
+                                                </button>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="../pages/pasien_ro.php">
+                                            <h6><button type="button" class="btn btn-primary">
+                                                    Pasien Regional Office
+                                                </button>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="../pages/pasien_psl.php">
+                                            <h6><button type="button" class="btn btn-secondary">
+                                                    Pasien Pasir Salak
+                                                </button>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="../pages/pasien_pkr.php">
+                                            <h6><button type="button" class="btn btn-success">
+                                                    Pasien Pangkor
+                                                </button>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="../pages/pasien_grk.php">
+                                            <h6><button type="button" class="btn btn-danger">
+                                                    Pasien Grik
+                                                </button>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="../pages/pasien_pom.php">
+                                            <h6><button type="button" class="btn btn-warning">
+                                                    Pasien Pom
+                                                </button>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="../pages/pasien_umum.php">
+                                            <h6><button type="button" class="btn btn-info">
+                                                    Pasien Umum
+                                                </button>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                             <br>
                             <div class="table-responsive">
 
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
+                                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="1">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -88,7 +141,6 @@ function tanggal_indo($tanggal)
                                             <th>ESTATE</th>
                                             <th>OP</th>
                                             <th>AUTHOR</th>
-                                            <th>Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -145,12 +197,6 @@ function tanggal_indo($tanggal)
                                                 <td><?php echo $estate;  ?></td>
                                                 <td> <?php echo $op; ?></td>
                                                 <td> <?php echo $author; ?></td>
-                                                <td style="text-align: center; width: 30%;">
-                                                    <a href="../forms/edit_pasien.php?id=<?= $read['id_pasien'] ?>" class="label label-sm label-info">
-                                                        <i class="bi bi-pencil-square btn btn-success btn-sm"></i></a>
-                                                    <a href="../api/delete_pasiens.php?id=<?= $read['id_pasien'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapusnya ?')">
-                                                        <i class="bi bi-trash btn btn-danger btn-sm"></i></a>
-                                                </td>
 
                                             </tr>
                                         <?php } ?>

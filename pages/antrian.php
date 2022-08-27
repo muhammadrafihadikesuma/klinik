@@ -31,7 +31,7 @@ require '../api/koneksi.php';
                         <h5 class="card-title">Data Antrian</h5>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
+                                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="1">
                                     <thead>
                                         <tr>
                                             <th>NO ANTRI</th>
